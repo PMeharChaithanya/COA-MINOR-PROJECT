@@ -1,0 +1,292 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 500px;
+    width: 90%; /* Adjust to 90% of the viewport width */
+    margin: 0 auto; /* Center the container */
+    padding-top: 60px; /* Add space for fixed nav */
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.glow {
+    font-size: 36px; /* Increased font size */
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    animation: subtle-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes subtle-glow {
+    from {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.elegant-glow {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    animation: elegant-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes elegant-pulse {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.section {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.encrypt-section {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.decrypt-section {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 300;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.btn {
+    padding: 12px 24px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.encrypt-btn {
+    background-color: #007bff;
+}
+
+.decrypt-btn {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.output-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.output-container p {
+    flex-grow: 1;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.output {
+    flex-grow: 1;
+    margin-right: 10px;
+    word-break: break-all;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.copy-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.copy-btn:hover {
+    background-color: #45a049;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+#home {
+    text-align: center;
+}
+
+.info-slider {
+    position: relative;
+    height: 300px; /* Increased height to fit more content */
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allow scrolling for longer content */
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.slide p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.slide ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.slide li {
+    margin-bottom: 5px;
+}
+
+#about h1 {
+    font-size: 48px; /* Increased font size */
+    margin-bottom: 20px;
+    letter-spacing: 2px; /* Added letter spacing */
+    font-weight: 700; /* Made font bolder */
+}
+
+#about h2 {
+    font-size: 32px; /* Increased font size */
+    margin-bottom: 30px;
+    color: #ffd700;
+    font-weight: 300; /* Made font lighter */
+    letter-spacing: 1px; /* Added letter spacing */
+}
+
+.teacher-info, .team-members {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.teacher-info h3, .team-members h3 {
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.team-members ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.team-members li {
+    margin-bottom: 5px;
+}
