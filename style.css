@@ -7,6 +7,9 @@ body {
     height: 100vh;
     margin: 0;
     color: #fff;
+    min-height: 100vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .container {
@@ -219,6 +222,60 @@ nav ul li a:hover, nav ul li a.active {
     margin-top: 20px;
 }
 
+.slider-container {
+    position: relative;
+    margin-top: 20px;
+    padding: 0 80px; /* Increase padding to make room for arrows */
+}
+
+.info-slider {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    padding: 0 40px; /* Add padding for the buttons */
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 15px 10px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.nav-arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.left-arrow:hover {
+    left: 15px; /* Move 5px to the right */
+}
+
+.right-arrow:hover {
+    right: 15px; /* Move 5px to the left */
+}
+
 .slide {
     position: absolute;
     top: 0;
@@ -289,4 +346,69 @@ nav ul li a:hover, nav ul li a.active {
 
 .team-members li {
     margin-bottom: 5px;
+}
+
+.slider-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.left-arrow:hover {
+    transform: translateX(-5px);
+}
+
+.right-arrow:hover {
+    transform: translateX(5px);
+}
+
+.teacher-profile {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.teacher-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.teacher-details {
+    flex: 1;
+}
+
+/* Specific styles for the about page */
+#about.section {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
+
+#about .container {
+    min-height: calc(100vh - 60px); /* Adjust based on your nav height */
+    display: flex;
+    flex-direction: column;
+}
+
+#about .teacher-info,
+#about .team-members {
+    margin-top: auto;
+}
+
+/* Remove any footer from the about page */
+body:has(#about) footer {
+    display: none;
 }

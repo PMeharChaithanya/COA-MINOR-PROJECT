@@ -21,45 +21,49 @@
     <div class="container">
         <section id="home" class="section">
             <h1 class="elegant-glow">XOR Encryption and Decryption</h1>
-            <div class="info-slider">
-                <div class="slide">
-                    <h2>What is XOR Encryption?</h2>
-                    <p>XOR encryption is a simple yet powerful method of encrypting data using the XOR (exclusive or) logical operation. It's a symmetric encryption algorithm, meaning the same key is used for both encryption and decryption.</p>
+            <div class="slider-container">
+                <button id="prevSlide" class="nav-arrow left-arrow">&#10094;</button>
+                <div class="info-slider">
+                    <div class="slide">
+                        <h2>What is XOR Encryption?</h2>
+                        <p>XOR encryption is a simple yet powerful method of encrypting data using the XOR (exclusive or) logical operation. It's a symmetric encryption algorithm, meaning the same key is used for both encryption and decryption.</p>
+                    </div>
+                    <div class="slide">
+                        <h2>How it Works</h2>
+                        <p>XOR encryption combines each bit of the message with a corresponding bit from the key. This process is reversible, making it easy to encrypt and decrypt data quickly. The XOR operation has the unique property that applying it twice with the same key returns the original data.</p>
+                    </div>
+                    <div class="slide">
+                        <h2>Security Considerations</h2>
+                        <p>While basic XOR encryption can be very secure when used with a one-time pad of the same length as the message, it's vulnerable when used with short or repeating keys. For maximum security, the key should be truly random and as long as the message itself.</p>
+                    </div>
+                    <div class="slide">
+                        <h2>Uses of XOR Encryption</h2>
+                        <p>XOR encryption finds applications in various fields:
+                            <ul>
+                                <li>Simple data obfuscation</li>
+                                <li>Generating pseudo-random numbers</li>
+                                <li>Creating cipher feedback mode in block ciphers</li>
+                                <li>Implementing one-time pad encryption</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="slide">
+                        <h2>Advantages of XOR Encryption</h2>
+                        <p>XOR encryption offers several benefits:
+                            <ul>
+                                <li>Fast and computationally efficient</li>
+                                <li>Easy to implement in both hardware and software</li>
+                                <li>Symmetric nature allows for quick encryption and decryption</li>
+                                <li>Forms the basis for more complex encryption algorithms</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="slide">
+                        <h2>Interesting Fact</h2>
+                        <p>XOR encryption played a crucial role in the development of the Vernam cipher, which when used with a truly random key, becomes the unbreakable one-time pad encryption system. This system was used for top-secret communications during World War II and the Cold War.</p>
+                    </div>
                 </div>
-                <div class="slide">
-                    <h2>How it Works</h2>
-                    <p>XOR encryption combines each bit of the message with a corresponding bit from the key. This process is reversible, making it easy to encrypt and decrypt data quickly. The XOR operation has the unique property that applying it twice with the same key returns the original data.</p>
-                </div>
-                <div class="slide">
-                    <h2>Security Considerations</h2>
-                    <p>While basic XOR encryption can be very secure when used with a one-time pad of the same length as the message, it's vulnerable when used with short or repeating keys. For maximum security, the key should be truly random and as long as the message itself.</p>
-                </div>
-                <div class="slide">
-                    <h2>Uses of XOR Encryption</h2>
-                    <p>XOR encryption finds applications in various fields:
-                        <ul>
-                            <li>Simple data obfuscation</li>
-                            <li>Generating pseudo-random numbers</li>
-                            <li>Creating cipher feedback mode in block ciphers</li>
-                            <li>Implementing one-time pad encryption</li>
-                        </ul>
-                    </p>
-                </div>
-                <div class="slide">
-                    <h2>Advantages of XOR Encryption</h2>
-                    <p>XOR encryption offers several benefits:
-                        <ul>
-                            <li>Fast and computationally efficient</li>
-                            <li>Easy to implement in both hardware and software</li>
-                            <li>Symmetric nature allows for quick encryption and decryption</li>
-                            <li>Forms the basis for more complex encryption algorithms</li>
-                        </ul>
-                    </p>
-                </div>
-                <div class="slide">
-                    <h2>Interesting Fact</h2>
-                    <p>XOR encryption played a crucial role in the development of the Vernam cipher, which when used with a truly random key, becomes the unbreakable one-time pad encryption system. This system was used for top-secret communications during World War II and the Cold War.</p>
-                </div>
+                <button id="nextSlide" class="nav-arrow right-arrow">&#10095;</button>
             </div>
         </section>
     </div>
@@ -67,3 +71,4 @@
     <script src="main.js"></script>
 </body>
 </html>
+

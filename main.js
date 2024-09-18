@@ -70,9 +70,12 @@ function copyToClipboard(elementId) {
 // Slider functionality
 function setupSlider() {
     const slides = document.querySelectorAll('.slide');
+    const prevButton = document.getElementById('prevSlide');
+    const nextButton = document.getElementById('nextSlide');
     if (slides.length === 0) return; // Exit if no slides (not on home page)
 
     let currentSlide = 0;
+    let intervalId;
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
@@ -89,8 +92,38 @@ function setupSlider() {
         showSlide(currentSlide);
     }
 
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function startAutoSlide() {
+        intervalId = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    }
+
+    function stopAutoSlide() {
+        clearInterval(intervalId);
+    }
+
+    // Event listeners for buttons
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
+        });
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide();
+        });
+    }
+
     showSlide(currentSlide);
-    setInterval(nextSlide, 3000); // Change slide every 3 seconds (reduced from 8)
+    startAutoSlide();
 }
 
 // Run setup when the DOM is fully loaded
