@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="nav.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('colour.png');">
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -18,16 +18,15 @@
     </nav>
 
     <div class="container">
-        <section id="encrypt" class="section encrypt-section">
-            <h2 class="elegant-glow">Encryption</h2>
-            <label for="message">Enter Message:</label>
-            <input type="text" id="message" placeholder="Enter a word" class="input-field">
-            <label for="key">Enter Binary Key (e.g., 10101):</label>
-            <input type="text" id="key" placeholder="Binary key" class="input-field">
-            <button onclick="encrypt()" class="btn encrypt-btn">Encrypt</button>
+        <section class="encrypt-section">
+            <h2>Encrypt Your Message</h2>
+            <input type="text" id="message" class="input-field" placeholder="Enter your message">
+            <input type="text" id="key" class="input-field" placeholder="Enter your key">
+            <button onclick="encrypt()" class="btn">Encrypt</button>
             <div class="output-container">
-                <p>Encrypted Binary: <span id="encryptedOutput" class="output"></span></p>
-                <button onclick="copyToClipboard('encryptedOutput')" class="btn copy-btn">Copy</button>
+                <p>Encrypted Output:</p>
+                <div id="encryptedOutput" class="output"></div>
+                <button onclick="copyToClipboard('encryptedOutput')" class="copy-btn">Copy to Clipboard</button>
             </div>
         </section>
     </div>

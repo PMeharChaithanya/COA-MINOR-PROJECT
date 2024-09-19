@@ -1,28 +1,51 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     color: #fff;
-    min-height: 100vh;
     padding-bottom: 0;
     margin-bottom: 0;
+    background: linear-gradient(45deg, #1a237e, #4a148c, #880e4f);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    border: none;
+    max-width: 800px;
+    text-align: center;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
     max-width: 500px;
-    width: 90%; /* Adjust to 90% of the viewport width */
-    margin: 0 auto; /* Center the container */
-    padding-top: 60px; /* Add space for fixed nav */
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 60px;
 }
 
 h1 {
@@ -30,6 +53,8 @@ h1 {
     margin-bottom: 20px;
     letter-spacing: 1px;
     font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .glow {
@@ -88,12 +113,16 @@ h2 {
     margin-bottom: 15px;
     letter-spacing: 0.5px;
     font-weight: 500;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 label {
     display: block;
     margin: 10px 0 5px;
     font-weight: 300;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .input-field {
@@ -102,14 +131,14 @@ label {
     margin-bottom: 15px;
     border: none;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
     transition: all 0.3s ease;
 }
 
 .input-field:focus {
     outline: none;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
@@ -123,14 +152,15 @@ label {
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    background-color: rgba(0, 123, 255, 0.8);
 }
 
 .encrypt-btn {
-    background-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.8);
 }
 
 .decrypt-btn {
-    background-color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.8);
     color: #000;
 }
 
@@ -150,6 +180,8 @@ label {
     margin-right: 10px;
     display: flex;
     align-items: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .output {
@@ -159,6 +191,8 @@ label {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
     border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .copy-btn {
@@ -215,101 +249,27 @@ nav ul li a:hover, nav ul li a.active {
     text-align: center;
 }
 
-.info-slider {
-    position: relative;
-    height: 300px; /* Increased height to fit more content */
-    overflow: hidden;
-    margin-top: 20px;
-}
-
-.slider-container {
-    position: relative;
-    margin-top: 20px;
-    padding: 0 80px; /* Increase padding to make room for arrows */
-}
-
-.info-slider {
-    position: relative;
-    height: 300px;
-    overflow: hidden;
-    padding: 0 40px; /* Add padding for the buttons */
-}
-
-.nav-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 15px 10px;
-    transition: all 0.3s ease;
-    z-index: 10;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.left-arrow {
-    left: 10px;
-}
-
-.right-arrow {
-    right: 10px;
-}
-
-.nav-arrow:hover {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-}
-
-.left-arrow:hover {
-    left: 15px; /* Move 5px to the right */
-}
-
-.right-arrow:hover {
-    right: 15px; /* Move 5px to the left */
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+.info-content {
+    text-align: left;
     padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto; /* Allow scrolling for longer content */
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
 }
 
-.slide.active {
-    opacity: 1;
-}
-
-.slide h2 {
-    margin-bottom: 10px;
+.info-content h2 {
     font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
-.slide p {
+.info-content p {
     font-size: 16px;
     line-height: 1.5;
-}
-
-.slide ul {
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.slide li {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 #about h1 {
@@ -317,6 +277,8 @@ nav ul li a:hover, nav ul li a.active {
     margin-bottom: 20px;
     letter-spacing: 2px; /* Added letter spacing */
     font-weight: 700; /* Made font bolder */
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 #about h2 {
@@ -325,6 +287,7 @@ nav ul li a:hover, nav ul li a.active {
     color: #ffd700;
     font-weight: 300; /* Made font lighter */
     letter-spacing: 1px; /* Added letter spacing */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .teacher-info, .team-members {
@@ -337,6 +300,7 @@ nav ul li a:hover, nav ul li a.active {
 .teacher-info h3, .team-members h3 {
     color: #4caf50;
     margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .team-members ul {
@@ -346,6 +310,8 @@ nav ul li a:hover, nav ul li a.active {
 
 .team-members li {
     margin-bottom: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .slider-nav {
@@ -411,4 +377,130 @@ nav ul li a:hover, nav ul li a.active {
 /* Remove any footer from the about page */
 body:has(#about) footer {
     display: none;
+}
+
+.project-name, .project-slogan {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.project-name {
+    font-size: 72px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.project-slogan {
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.encrypt-section, .decrypt-section {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    max-width: 600px;
+}
+
+.encrypt-section h2, .decrypt-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-field:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.output-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.output {
+    word-break: break-all;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.copy-btn {
+    width: 30%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .encrypt-section h2, .decrypt-section h2 {
+        font-size: 28px;
+    }
+    
+    .input-field, .btn {
+        font-size: 16px;
+    }
 }

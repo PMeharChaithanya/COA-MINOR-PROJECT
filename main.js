@@ -128,3 +128,86 @@ function setupSlider() {
 
 // Run setup when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', setupSlider);
+
+function typeText(element, text, direction = 'right', delay = 50) {
+    let i = 0;
+    element.innerHTML = '';
+    return new Promise((resolve) => {
+        function type() {
+            if (i < text.length) {
+                if (direction === 'right') {
+                    element.innerHTML += text.charAt(i);
+                } else {
+                    element.innerHTML = text.charAt(i) + element.innerHTML;
+                }
+                i++;
+                setTimeout(type, delay);
+            } else {
+                setTimeout(resolve, 1000);
+            }
+        }
+        type();
+    });
+}
+
+function eraseText(element, direction = 'right', delay = 50) {
+    return new Promise((resolve) => {
+        function erase() {
+            if (element.innerHTML.length > 0) {
+                if (direction === 'right') {
+                    element.innerHTML = element.innerHTML.slice(0, -1);
+                } else {
+                    element.innerHTML = element.innerHTML.slice(1);
+                }
+                setTimeout(erase, delay);
+            } else {
+                setTimeout(resolve, 500);
+            }
+        }
+        erase();
+    });
+}
+
+function animateText(element, text, delay = 50) {
+    element.innerHTML = '';
+    element.style.whiteSpace = 'normal'; // Allow text to wrap
+    return new Promise((resolve) => {
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, delay);
+            } else {
+                setTimeout(resolve, 1000);
+            }
+        }
+        type();
+    });
+}
+
+async function animateTextSequence() {
+    const projectName = document.getElementById('projectName');
+    const projectSlogan = document.getElementById('projectSlogan');
+    
+    while (true) {
+        projectName.style.opacity = '0';
+        projectSlogan.style.opacity = '0';
+        projectName.style.transform = 'translateY(20px)';
+        projectSlogan.style.transform = 'translateY(20px)';
+        
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        projectName.style.opacity = '1';
+        projectName.style.transform = 'translateY(0)';
+        await animateText(projectName, 'XOR Encryption');
+        
+        projectSlogan.style.opacity = '1';
+        projectSlogan.style.transform = 'translateY(0)';
+        await animateText(projectSlogan, 'Simplifying encryption, one bit at a time');
+        
+        await new Promise(resolve => setTimeout(resolve, 3000));
+    }
+}
+
+document.addEventListener('DOMContentLoaded', animateTextSequence);
